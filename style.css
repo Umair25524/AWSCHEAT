@@ -1,0 +1,96 @@
+/* Base styles for the body and headings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container for the boxes */
+#boxContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds space between the boxes */
+}
+
+/* Styles for each box */
+.box {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px; /* Default width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden; /* Ensures content does not overflow the box */
+}
+
+.box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box .content {
+    display: none; /* Initially hide the content */
+}
+
+.box.open .content {
+    display: block; /* Show content when the box is open */
+}
+
+/* Title style */
+.title {
+    background-color: #0073e6;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1em; /* Increased font size for visibility */
+}
+
+/* Content style */
+.content {
+    padding: 15px;
+    display: none; /* Hidden by default */
+    font-size: 0.9em; /* Adjusted font size */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Show content when the box is open */
+.box.open .content {
+    display: block; /* Show content when box is open */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Adjust the width of the boxes for smaller screens */
+    .box {
+        width: 90%; /* Use 90% of the container width */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .box {
+        width: 100%; /* Use full width on very small screens */
+    }
+
+    .title {
+        font-size: 1em; /* Adjust title font size */
+    }
+
+    .content {
+        font-size: 0.85em; /* Adjust content font size */
+    }
+}
